@@ -31,6 +31,7 @@ namespace MeasureAPIPerformance.Controllers
         [HttpGet]
         public IEnumerable<Author> Get()
         {
+            Thread.Sleep(1000); // added this delay to see a difference
             return authors;
         }
 
