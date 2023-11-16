@@ -1,4 +1,5 @@
 ﻿using MeasureAPIPerformance.Models;
+using MethodTimer;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -26,12 +27,14 @@ namespace MeasureAPIPerformance.Controllers
             });
         }
 
+        [Time]
         [HttpGet]
         public IEnumerable<Author> Get()
         {
             return authors;
         }
 
+        [Time]
         [HttpGet("{id}", Name = "Get")]
         public Author Get(int id)
         {
